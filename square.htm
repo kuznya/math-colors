@@ -1,0 +1,48 @@
+<html>
+<body>
+<script>
+function write(s)   { document.write(s); }
+function writeln(s) { document.write(s+'\n'); }
+function rand_bit() { return Math.round(Math.random()); }
+
+</script>
+
+<style>
+.Border
+{
+    margin :  20px;
+    height : 800px;
+    width  : 800px;
+    border-top : solid 1px #008;
+    border-left: solid 1px #008;
+}
+
+.Border div
+{
+    float:left;
+    width:49px;
+    height:49px;
+    border-right:1px solid #008;
+    border-bottom:1px solid #008;
+}
+
+/*.clearit { clear:both; } */
+</style>
+<div class=Border>
+<script>
+var BorderX = 16;
+var BorderY = 16;
+var c;
+
+for (var j=0; j<BorderY; j++)
+{
+    for (var i=0; i<BorderX; i++)
+    {
+        c = '#'+i.toString(16)+j.toString(16)+'0';
+        writeln('<div style="background:'+c+';"></div>');
+    }
+}
+</script>
+</div>
+</body>
+</html>
