@@ -1,12 +1,5 @@
 <html>
 <body>
-<script>
-function write(s)   { document.write(s); }
-function writeln(s) { document.write(s+'\n'); }
-function rand_bit() { return Math.round(Math.random()); }
-
-</script>
-
 <style>
 .Border
 {
@@ -26,19 +19,19 @@ function rand_bit() { return Math.round(Math.random()); }
     border-bottom:1px solid #008;
 }
 
-/*.clearit { clear:both; } */
 </style>
 <div class=Border>
 <script>
-var BorderX = 16;
-var BorderY = 16;
-var c;
+function writeln(s) { document.write(s+'\n'); }
 
-for (var j=0; j<BorderY; j++)
+const BorderX = 16;
+const BorderY = 16;
+
+for (let j=0; j<BorderY; j++)
 {
-    for (var i=0; i<BorderX; i++)
+    for (let i=0; i<BorderX; i++)
     {
-        c = '#'+i.toString(16)+j.toString(16)+'0';
+        const c = '#'+i.toString(16)+j.toString(16)+'0';
         writeln('<div style="background:'+c+';"></div>');
     }
 }
