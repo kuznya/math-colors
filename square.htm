@@ -1,23 +1,28 @@
 <html>
 <body>
 <style>
-.Border
-{
-    margin :  20px;
-    height : 800px;
-    width  : 800px;
-    border-top : solid 1px #008;
+.Border {
+    margin: 20px;
+    height: 800px;
+    width: 800px;
+    border-top: solid 1px #008;
     border-left: solid 1px #008;
-}
+  }
 
-.Border div
-{
-    float:left;
-    width:49px;
-    height:49px;
-    border-right:1px solid #008;
-    border-bottom:1px solid #008;
+.Border > div {
+  float: left;
+  width: 49px;
+  height: 49px;
+  border-right: 1px solid #008;
+  border-bottom: 1px solid #008;
 }
+.Border div div {
+  opacity: 0;
+  text-align: center;
+  padding-top: 16px;
+  border: 0;
+}
+.Border div div:hover { opacity: 100; }
 
 </style>
 <div class=Border>
@@ -27,13 +32,11 @@ function writeln(s) { document.write(s+'\n'); }
 const BorderX = 16;
 const BorderY = 16;
 
-for (let j=0; j<BorderY; j++)
-{
-    for (let i=0; i<BorderX; i++)
-    {
-        const c = '#'+i.toString(16)+j.toString(16)+'0';
-        writeln('<div style="background:'+c+';"></div>');
-    }
+for (let j = 0; j<BorderY; j++) {
+	for (let i = 0; i<BorderX; i++) {
+		const c = '#' + i.toString(16) + j.toString(16) + '0';
+		writeln('<div style="background:' + c + ';"><div>' + c + '</div></div>');
+	}
 }
 </script>
 </div>
